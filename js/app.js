@@ -4,17 +4,15 @@
 
 	/**
 	 * Sets up a brand new Todo list.
-	 *
-	 * @param {string} name The name of your new to do list.
 	 */
-	function Todo(name) {
+	function Todo() {
 		this.model = new app.Model();
 		this.template = new app.Template();
 		this.view = new app.View(this.template);
 		this.controller = new app.Controller(this.model, this.view);
 	}
 
-	var todo = new Todo('todos-vanillajs');
+	var todo = new Todo();
 
 	$on(window, 'load', function() { todo.controller.showAll(); });
 })();
